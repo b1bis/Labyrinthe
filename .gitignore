@@ -1,0 +1,16 @@
+# XMake #
+
+.xmake/
+vsxmake2019/
+
+# Binaries #
+
+build/
+
+# Visual Studio #
+
+.vs/
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
