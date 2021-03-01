@@ -1,10 +1,18 @@
 #include "MazeGenerator.hpp"
-#include <iostream>
+#include "PPMWriter.hpp"
 
+#include <ctime>
+#include <fstream>
 
 int main(int argc, char** argv)
 {
 	MazeGenerator generator;
-	std::cout << generator.Generate(24, 10, 6) << std::endl;
+	Maze maze = generator.Generate(50, 50, static_cast<unsigned>(time(nullptr)));
+
+	PPMWriter writer(Color(255, 255, 255), Color(0, 0, 255), Color(255, 0, 0));
+	std::ofstream file("maze.ppm");
+	writer.Write(file, maze);
+
+	std::cout << maze << std::endl;
 	return 0;
 }
